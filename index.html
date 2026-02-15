@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insight Insiders</title>
+
+<!-- Retro 8-bit font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 90%;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .zigzag {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    align-items: center;
+  }
+
+  .zigzag:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .zigzag img {
+    width: 35%;
+    margin: 10px;
+  }
+
+  .zigzag .text {
+    width: 45%;
+    margin: 10px;
+    line-height: 1.5;
+  }
+
+  .links {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .links a:hover {
+    text-decoration: underline;
+  }
+
+  .crt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    animation: fall 4s linear infinite;
+    z-index: 9999;
+  }
+
+  @keyframes fall {
+    0% {background-position: 0 0;}
+    100% {background-position: 0 100%;}
+  }
+
+  .intro, .disclaimer {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .disclaimer {
+    font-size: 10px;
+    color: #bbb;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- CRT overlay -->
+<div class="crt"></div>
+
+<!-- Top image -->
+<img id="topImage" src="top-image.jpg" alt="Top Image">
+
+<!-- Content switcher links below top image -->
+<div class="links" id="contentLinks">
+  <a data-set="0">About Insiders</a>
+  <a data-set="1">Boost FPS</a>
+  <a data-set="2">Mods (GameBanana)</a>
+  <a data-set="3">ZeroTier</a>
+  <a data-set="4">Install HUD</a>
+</div>
+
+<!-- Introduction -->
+<div class="intro">
+  <p>Welcome to Insight Insiders, Enjoy your stay in the Discord server or Watch LitzInsight Videos.</p>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+  <p>Disclaimer: THE INSIGHT INSIDERS IS NOT RELATED TO LEAKS OR SIMILAIRTY TO INSIDERS INSIGHT.</p>
+</div>
+
+<!-- Zig-zag sections -->
+<div class="zigzag">
+  <div class="text">
+    <p>This is LitzInsight or simply Litz, He's the owner of Insight Insiders Discord server and creator of the Litz Hud mod for Team Fortress 2 Legacy,
+Do not steal or preted to be the owner of the Hud mod.</p>
+  </div>
+  <img src="Image1.jpg" alt="Zig-zag Image 1">
+</div>
+
+<div class="zigzag">
+  <div class="text">
+    <p>The LitzInsight Hud Mod is a Mod for TF2 Legacy, Is a Toonhud port with Extras to modify the Hud Mod, Download link can be found 
+on the discord server.</p>
+  </div>
+  <img src="Image2.jpg" alt="Zig-zag Image 2">
+</div>
+
+<div class="zigzag">
+  <div class="text">
+    <p>The Insight Insiders Discord server offers Both as Hangout server and TF2 server, 
+Chat with others and follow rules on the Discord server.</p>
+  </div>
+  <img src="Image3.jpg" alt="Zig-zag Image 3">
+</div>
+
+<!-- Special link (Only for Set 2) -->
+<div class="links" id="specialLink" style="display:none;">
+  <a href="https://drive.google.com/file/d/1g3Lxmun9Roy0e7gSQ8sNQNt_-WEr_vvG/view?usp=drivesdk" target="_blank">
+    FPS Boost Mod Install
+  </a>
+</div>
+
+<!-- Special link (only appears on Set 3) -->
+<div class="links" id="specialLinkSet3" style="display: none;">
+  <a href="https://gamebanana.com/games/5418" target="_blank">
+    Visit TF2C GameBanana
+  </a>
+</div>
+
+<!-- Set 4 YouTube Section -->
+<div id="set4VideoSection" style="display: none; text-align: center; margin: 40px 0;">
+
+  <p style="margin-bottom: 20px;">
+    Better Explaintion 
+  </p>
+
+  <a href="https://www.youtube.com/watch?v=dia4V9fGqZo" target="_blank">
+    Of the ZeroTier tutorial, works in TF2L aswell
+  </a>
+
+  <div style="margin-top: 20px;">
+    <iframe 
+      width="90%" 
+      height="315"
+      src="https://www.youtube.com/embed/dia4V9fGqZo"
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</div>
+
+<!-- Links above bottom image -->
+<div class="links">
+  <a href="https://www.youtube.com/@LitzInsight" target="_blank">YouTube</a>
+  <a href="https://discord.gg/Q6t7saxC66" target="_blank">Discord</a>
+  <a href="https://www.roblox.com/users/2807555342/profile" target="_blank">Roblox</a>
+  <a href="https://discord.gg/kzrA5N5K6z" target="_blank">G5 (Pyro Server) </a>
+</div>
+
+<!-- Bottom image -->
+<img src="bottom-image.jpg" alt="Bottom Image">
+
+<!-- JavaScript -->
+<script>
+const contentSets = [
+  [ // Set 1
+    { text: "This is LitzInsight or simply Litz, He's the owner of Insight Insiders Discord server and creator of the Litz Hud mod for Team Fortress 2 Legacy, Do not steal or preted to be the owner of the Hud mod.", img: "zigzag1-set1.png" },
+    { text: "The LitzInsight Hud Mod is a Mod for TF2 Legacy, Is a Toonhud port with Extras to modify the Hud Mod, Download link can be found on the discord server.", img: "zigzag2-set1.png" },
+    { text: "The Insight Insiders Discord server offers Both as Hangout server and TF2 server, Chat with others and follow rules on the Discord server.", img: "zigzag3-set1.png" },
+    { topImg: "top-image-set1.png" }
+  ],
+  [ // Set 2
+    { text: "Since Optimzation is not good on vanilla TF2L for Low end device, Alternative is looked for Like Mastercomfig or cfg.tf for FPS boost, But what if you want to have the 2 together?", img: "zigzag1-set2.png" },
+    { text: "This is the FPS Boost Mod by Litz, it combines both MC and cfg.tf for FPS Boost, without having to backup your Mc or cfg.tf if you reinstall TF2L", img: "zigzag2-set2.png" },
+    { text: "How to Install? : Click on the Download Button and install it, Copy the cfg and custom folder into the TF2L main folder", img: "zigzag3-set2.png" },
+    { topImg: "top-image-set2.png" }
+  ],
+  [ // Set 3
+    { text: "This is Gamebanana or Originally known as FPSBanana, This website is for Mods to use in games, like maps, reskins, sprays, mods, etc...", img: "zigzag1-set3.png" },
+    { text: "If you planning to use Mods from gamebanana Go to GameBanana, and make sure to look for tf2c mods for TF2L and click on the mod you wanna use and click on download.", img: "zigzag2-set3.png" },
+    { text: "Once the Mod has been installed use ZArchiver and extract it to the custom folder to use the mod, if you want to disable a mod inside the Custom folder put the mod in the disabled folder inside the custom folder.", img: "zigzag3-set3.png" },
+    { topImg: "top-image-set3.png" }
+  ],
+  [ // Set 4
+    { text: "ZeroTier Is a host your server style for TF2 Mobile ports But we not gonna talk about how to make your own network instead, We look at how to join someone's Network server in TF2L", img: "zigzag1-set4.png" },
+    { text: "Install Zerotier One, Ask the Person who created for the Network ID to connect, once you connected to the Network ID, Remember the Managed IP and copy it", img: "zigzag2-set4.png" },
+    { text: "Connect to the Network ID and Launch TF2L and Wait for the Person to Host a server, Once he did connect with the Managed IP", img: "zigzag3-set4.png" },
+    { topImg: "top-image-set4.png" }
+  ],
+  [ // Set 5
+    { text: "Hud Mods are only Compablitie with TF2L, And can be used for a Preference style With Unqiueness like Minimal or stylezed, (DarHud and RaysHud are broken with TF2L on GameBanana)", img: "zigzag1-set5.png" },
+    { text: "Copy the Hud Mod that you Installed into the Custom Folder, If you have other Hud Mod's Installed put it in the Disabled folder in custom Folder, Or Remove the Hud Mod and put the New one in", img: "zigzag2-set5.png" },
+    { text: "If Hud Mod that You Installed Has A Customization folder or Extras (Like LitzInsight Hud Mod) pick the preset you chose into the Hud Mod, Installation with the extras folder will have a Readme file for how to put in extras (If you planning to install the Litz Hud Mod then click on the Discord Text to Join the discord server to Install the Hud Mod) ", img: "zigzag3-set5.png" },
+    { topImg: "top-image-set5.png" }
+  ]
+];
+
+const links = document.querySelectorAll("#contentLinks a");
+
+links.forEach(link => {
+  link.addEventListener("click", function(e){
+    e.preventDefault();
+    const setIndex = parseInt(this.dataset.set);
+    const zigzags = document.querySelectorAll(".zigzag");
+
+// Toggle special link visibility
+const special = document.getElementById("specialLink");
+
+if (setIndex === 1) {   // Set 2 (because counting starts at 0)
+  special.style.display = "block";
+} else {
+  special.style.display = "none";
+}
+
+const special3 = document.getElementById("specialLinkSet3");
+
+// Show only for Set 3 (index 2)
+if (setIndex === 2) {
+  special3.style.display = "block";
+} else {
+  special3.style.display = "none";
+}
+
+    zigzags.forEach((section, i) => {
+      section.querySelector(".text p").textContent = contentSets[setIndex][i].text;
+      section.querySelector("img").src = contentSets[setIndex][i].img;
+    });
+
+const set4Video = document.getElementById("set4VideoSection");
+
+if (setIndex === 3) {   // Set 4
+  set4Video.style.display = "block";
+} else {
+  set4Video.style.display = "none";
+}
+
+    // Change top image
+    document.getElementById("topImage").src = contentSets[setIndex][3].topImg;
+  });
+});
+</script>
+
+</body>
+</html>
