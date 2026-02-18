@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insight Insiders</title>
@@ -105,9 +106,25 @@
 </style>
 </head>
 <body>
+<!-- 90s Boot Loader -->
+<div id="bootScreen">
+  <div id="bootText"></div>
+</div>
 
 <!-- CRT overlay -->
 <div class="crt"></div>
+
+<!-- Black & White Retro Title Bar -->
+<div class="titlebar">
+  <div class="checker"></div>
+  <div class="title-text">Insight Insiders.exe</div>
+
+  <div class="window-buttons">
+    <div class="win-btn minimize"></div>
+    <div class="win-btn maximize"></div>
+    <div class="win-btn close"></div>
+  </div>
+</div>
 
 <!-- Top image -->
 <img id="topImage" src="top-image.jpg" alt="Top Image">
@@ -119,6 +136,11 @@
   <a data-set="2">Mods (GameBanana)</a>
   <a data-set="3">ZeroTier</a>
   <a data-set="4">Install HUD</a>
+  <a data-set="5">CO Mobile ModPack</a>
+  <a data-set="6">Touch</a>
+  <a data-set="7">Viewmodel Customization</a>
+  <a data-set="8">Fix Audio Not recording</a>
+
 </div>
 
 <!-- Introduction -->
@@ -132,6 +154,7 @@
 </div>
 
 <!-- Zig-zag sections -->
+<div class="bottom-line"></div>
 <div class="zigzag">
   <div class="text">
     <p>This is LitzInsight or simply Litz, He's the owner of Insight Insiders Discord server and creator of the Litz Hud mod for Team Fortress 2 Legacy,
@@ -147,6 +170,7 @@ on the discord server.</p>
   </div>
   <img src="zigzag2-set1.png" alt="Zig-zag Image 2">
 </div>
+
 
 <div class="zigzag">
   <div class="text">
@@ -194,7 +218,15 @@ Chat with others and follow rules on the Discord server.</p>
 
 </div>
 
+<!-- Special link (only appears on Set 6) -->
+<div class="links" id="specialLinkSet6" style="display: none;">
+  <a href="https://drive.google.com/file/d/10L0pGkw2NzIo1Z2hOtp_PllOF_6W1WcR/view?usp=drivesdk" target="_blank">
+    Install Classic Offensive Mod Pack
+  </a>
+</div>
+
 <!-- Links above bottom image -->
+<div class="bottom-line"></div>
 <div class="links">
   <a href="https://www.youtube.com/@LitzInsight" target="_blank">YouTube</a>
   <a href="https://discord.gg/Q6t7saxC66" target="_blank">Discord</a>
@@ -237,8 +269,117 @@ const contentSets = [
     { text: "Copy the Hud Mod that you Installed into the Custom Folder, If you have other Hud Mod's Installed put it in the Disabled folder in custom Folder, Or Remove the Hud Mod and put the New one in", img: "zigzag2-set5.png" },
     { text: "If Hud Mod that You Installed Has A Customization folder or Extras (Like LitzInsight Hud Mod) pick the preset you chose into the Hud Mod, Installation with the extras folder will have a Readme file for how to put in extras (If you planning to install the Litz Hud Mod then click on the Discord Text to Join the discord server to Install the Hud Mod) ", img: "zigzag3-set5.png" },
     { topImg: "top-image-set5.png" }
+  ],
+  [ // Set 6
+  { text: "The CO Modpack is a Modpack for CS source mobile port That changes the models, maps for a feel like CS 1.6 but with updated models that don't stick out in source.", img: "zigzag1-set6.png" },
+  { text: "Originally created by ZooL who made CO before shutdown by Vavle and Mods recreated it in cs source, Is sad to see to get shutdown but Better than nothing i guess?", img: "zigzag2-set6.png" },
+  { text: "Now is Only made for Clientmod v1.3.1 by qlf_robert due to Viewmodel customization, Installation is included the ZIP once downloaded", img: "zigzag3-set6.png" },
+  { topImg: "top-image-set6.png" }
+],
+
+[ // Set 7
+  { text: "When Source Engie Port's most important thing is Touch, Touch is Display Buttons on Source Port's on mobile for controlling the game. but how to install one?", img: "zigzag1-set7.png" },
+  { text: "When you Downloaded the touch you wanna use, Put it in the Main files of the game, to edit the touch Go Ingame and click on the cog icon, if you in a server to edit the touch", img: "zigzag2-set7.png" },
+  { text: "MOST IMPORTANT : DO NOT PUT IT IN CUSTOM FOLDER, OR ELSE THE TOUCH WON'T SAVE THE POSITION AND WILL GO BACK TO THE ORIGINAL POSITION", img: "zigzag3-set7.png" },
+  { topImg: "top-image-set7.png" }
+],
+
+[ // Set 8
+  { text: "When it comes to Viewmodel for TF2L Is no wonder that is customization, brings it different weather you want it Minmized or wacky?, if you want it?", img: "zigzag1-set8.png" },
+  { text: "Viewmodel can be edited either from settings or the Console in the TF2L.", img: "zigzag2-set8.png" },
+  { text: "If you wanna use my Viewmodel then copy these commands into the console.   Viewmodel_fov 100, Viewmodel_offset_x 3, Viewmodel_offset_y 0, Viewmodel_offset_z -10", img: "zigzag3-set8.png" },
+  { topImg: "top-image-set8.png" }
+],
+
+[ // Set 9
+  { text: "If you recording Videos on TF2L, Make sure to Enable this setting for fix the audio not recording.", img: "zigzag1-set9.png" },
+  { text: "Go in settings and audio and set the speaker configuration to 2 speakers (keep in mind you have to do this if you recording bcs it goes back to blank", img: "zigzag2-set9.png" },
+  { text: "Test recording and if you hear the game audio, Volia you did everything right.", img: "zigzag3-set9.png" },
+  { topImg: "top-image-set9.png" }
   ]
 ];
+
+window.addEventListener("load", function () {
+
+  const bootLines = [
+    "INSIGHT SYSTEM BIOS v2.4",
+    "Copyright (C) 1982-2026 Insite Corp.",
+    "",
+    "CPU: Intel(R) Pentium MMX 233MHz",
+    "Checking memory...",
+    "Memory Test: 640K OK",
+    "Extended Memory: 65536K OK",
+    "",
+    "Detecting IDE drives...",
+    "Primary Master: Quantum Fireball 4.3GB",
+    "Secondary Master: ATAPI CD-ROM 24X",
+    "",
+    "Initializing Plug and Play Devices...",
+    "Sound Blaster 16... OK",
+    "Network Adapter... OK",
+    "",
+    "Loading HIMEM.SYS...",
+    "Loading SMARTDRV.EXE...",
+    "",
+    "Booting from C:\\...",
+    "",
+    "Launching INSIGHT Interface..."
+  ];
+
+  const bootText = document.getElementById("bootText");
+  const bootScreen = document.getElementById("bootScreen");
+
+  let lineIndex = 0;
+  let charIndex = 0;
+
+  function typeWriter() {
+
+    if (lineIndex < bootLines.length) {
+
+      if (charIndex < bootLines[lineIndex].length) {
+
+        bootText.innerHTML += bootLines[lineIndex].charAt(charIndex);
+        charIndex++;
+
+        // Random delay for authentic typing feel
+        setTimeout(typeWriter, Math.random() * 40 + 20);
+
+      } else {
+
+        bootText.innerHTML += "\n";
+        lineIndex++;
+        charIndex = 0;
+
+        // Pause between lines
+        setTimeout(typeWriter, 300);
+      }
+
+    } else {
+
+      // Small dramatic pause before fade
+      setTimeout(() => {
+        bootScreen.style.transition = "opacity 0.8s";
+        bootScreen.style.opacity = "0";
+
+        setTimeout(() => {
+          bootScreen.style.display = "none";
+        }, 800);
+
+      }, 800);
+    }
+  }
+
+  typeWriter();
+});
+
+
+document.querySelectorAll(".set-box").forEach(box => {
+  box.addEventListener("click", function() {
+    const setIndex = parseInt(this.dataset.set);
+    switchSet(setIndex); // call your existing set switch function
+  });
+});
+
 
 const links = document.querySelectorAll("#contentLinks a");
 
@@ -278,6 +419,16 @@ if (setIndex === 3) {   // Set 4
 } else {
   set4Video.style.display = "none";
 }
+
+const special6 = document.getElementById("specialLinkSet6");
+
+// Show only for Set 6 (index 5)
+if (setIndex === 5) {
+  special6.style.display = "block";
+} else {
+  special6.style.display = "none";
+}
+
 
     // Change top image
     document.getElementById("topImage").src = contentSets[setIndex][3].topImg;
